@@ -141,12 +141,13 @@ button:hover {
   height: 200px;
   object-fit: cover;
   border-radius: 4px;
-  transition: transform 0.3s ease; /* Smooth zoom effect */
+  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s;
 }
 
 .gallery-item img:hover {
-  transform: scale(1.08); /* Zoom in on hover */
+  transform: scale(1.25);
   z-index: 2;
+  box-shadow: 0 8px 32px 0 rgba(11,61,145,0.18);
 }
 
 /* Image label styles */

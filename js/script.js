@@ -122,19 +122,16 @@ getImagesButton.addEventListener('click', () => {
     .then(response => response.json())
     .then(data => {
       // If the API returns a single object, put it in an array
-      const images = Array.isArray(data) ? data : [data];
+      const items = Array.isArray(data) ? data : [data];
 
-      // Filter out any results that are not images (e.g., videos)
-      const photos = images.filter(item => item.media_type === 'image');
-
-      // If there are no images, show a message
-      if (photos.length === 0) {
+      // If there are no items, show a message
+      if (!items.length) {
         gallery.innerHTML = `<div class="placeholder"><div class="placeholder-icon">😢</div><p>No images found for this date range.</p></div>`;
         return;
       }
 
       // Build the gallery HTML with images and videos
-      gallery.innerHTML = photos.map((photo, idx) => {
+      gallery.innerHTML = items.map((photo, idx) => {
         if (photo.media_type === 'image') {
           return `
             <div class="gallery-item">
@@ -146,7 +143,6 @@ getImagesButton.addEventListener('click', () => {
             </div>
           `;
         } else if (photo.media_type === 'video') {
-          // Use thumbnail if available, else show a play icon
           const thumb = photo.thumbnail_url || 'https://upload.wikimedia.org/wikipedia/commons/7/75/Video-Icon.png';
           return `
             <div class="gallery-item">
@@ -167,7 +163,7 @@ getImagesButton.addEventListener('click', () => {
       const galleryImages = gallery.querySelectorAll('img');
       galleryImages.forEach((img, i) => {
         img.addEventListener('click', () => {
-          openModal(photos[i]);
+          openModal(items[i]);
         });
       });
     })

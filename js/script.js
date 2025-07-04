@@ -73,11 +73,14 @@ getImagesButton.addEventListener('click', () => {
         return;
       }
 
-      // Build the gallery HTML with images and labels (titles)
+      // Build the gallery HTML with images and labels (title + date) below the image
       gallery.innerHTML = photos.map((photo, idx) => `
         <div class="gallery-item">
           <img src="${photo.url}" alt="${photo.title}" data-idx="${idx}" style="cursor:pointer;" />
-          <div class="image-label">${photo.title}</div>
+          <div class="image-label">
+            <div>${photo.title}</div>
+            <div style="font-size: 0.95em; font-weight: normal; opacity: 0.85; margin-top: 2px;">${photo.date}</div>
+          </div>
         </div>
       `).join('');
 

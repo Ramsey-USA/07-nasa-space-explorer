@@ -1,14 +1,14 @@
 /* NASA Design System Colors */
 :root {
-  --nasa-blue: #0b3d91;
-  --nasa-red: #fc3d21;
-  --nasa-dark: #212121;
-  --nasa-light: #f1f1f1;
+  --nasa-blue: #105bd8;
+  --nasa-red: #dd361c;
+  --nasa-dark: #323a45;
+  --nasa-light: #e4e2e0;
   --nasa-white: #fff;
 }
 
-/* Import NASA typefaces from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Public+Sans:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap');
+/* Import NASA typefaces and Merriweather from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Public+Sans:wght@400;700&family=Source+Sans+Pro:wght@400;700&family=Merriweather:wght@400;700&display=swap');
 
 /* Global reset & box sizing */
 * {
@@ -19,10 +19,18 @@
 
 /* Base page styles */
 body {
-  font-family: 'Inter', 'Public Sans', 'Source Sans Pro', Helvetica, Arial, Verdana, sans-serif;
+  font-family: 'Merriweather', serif;
   background-color: var(--nasa-light);
   color: var(--nasa-dark);
   padding: 20px;
+}
+
+/* Headings use Helvetica */
+h1, h2, h3, h4, h5, h6 {
+  font-family: Helvetica, Arial, 'Source Sans Pro', 'Public Sans', 'Inter', Verdana, sans-serif;
+  font-weight: bold;
+  color: var(--nasa-blue);
+  letter-spacing: 2px;
 }
 
 /* Centered container */
@@ -39,13 +47,6 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
   margin-bottom: 20px;
-}
-
-h1 {
-  font-family: 'Public Sans', 'Inter', 'Source Sans Pro', Helvetica, Verdana, Arial, sans-serif;
-  font-weight: bold;
-  color: var(--nasa-blue);
-  letter-spacing: 2px;
 }
 
 /* Logo */
@@ -67,7 +68,7 @@ h1 {
 /* Inputs and buttons */
 input[type="date"],
 button {
-  font-family: 'Inter', 'Public Sans', 'Source Sans Pro', Helvetica, Arial, Verdana, sans-serif;
+  font-family: 'Source Sans Pro', 'Public Sans', 'Inter', Helvetica, Arial, Verdana, sans-serif;
   font-weight: normal;
   color: var(--nasa-dark);
   padding: 10px 15px;
@@ -155,7 +156,7 @@ button:hover {
   position: static;
   background: var(--nasa-blue);
   color: var(--nasa-white);
-  font-family: 'Public Sans', 'Inter', 'Source Sans Pro', Helvetica, Verdana, Arial, sans-serif;
+  font-family: 'Source Sans Pro', 'Public Sans', 'Inter', Helvetica, Arial, Verdana, sans-serif;
   font-weight: bold;
   font-size: 18px;
   letter-spacing: 1px;
@@ -202,6 +203,7 @@ button:hover {
 .modal-content {
   background: var(--nasa-white);
   color: var(--nasa-dark);
+  font-family: 'Source Sans Pro', 'Public Sans', 'Inter', Helvetica, Arial, Verdana, sans-serif;
   padding: 20px;
   border-radius: 8px;
   max-width: 95vw;
@@ -217,7 +219,7 @@ button:hover {
 }
 
 .modal-content h2 {
-  font-family: 'Public Sans', 'Inter', 'Source Sans Pro', Helvetica, Verdana, Arial, sans-serif;
+  font-family: Helvetica, Arial, 'Source Sans Pro', 'Public Sans', 'Inter', Verdana, sans-serif;
   font-weight: bold;
   color: var(--nasa-blue);
   font-size: 2rem;
@@ -226,7 +228,7 @@ button:hover {
 }
 
 .modal-content p {
-  font-family: 'Inter', 'Public Sans', 'Source Sans Pro', Helvetica, Arial, Verdana, sans-serif;
+  font-family: 'Merriweather', serif;
   color: var(--nasa-dark);
   font-size: 1.1rem;
   line-height: 1.6;
@@ -234,7 +236,7 @@ button:hover {
 }
 
 #modalDate {
-  font-family: 'Inter', 'Public Sans', 'Source Sans Pro', Helvetica, Arial, Verdana, sans-serif;
+  font-family: 'Source Sans Pro', 'Public Sans', 'Inter', Helvetica, Arial, Verdana, sans-serif;
   color: var(--nasa-red);
   font-size: 1.1rem;
   font-weight: bold;
@@ -269,7 +271,7 @@ button:hover {
 .fact-box {
   background: var(--nasa-blue);
   color: var(--nasa-white);
-  font-family: 'Public Sans', 'Inter', 'Source Sans Pro', Helvetica, Verdana, Arial, sans-serif;
+  font-family: 'Source Sans Pro', 'Public Sans', 'Inter', Helvetica, Verdana, Arial, sans-serif;
   font-size: 1.15rem;
   font-weight: 600;
   border-radius: 6px;
